@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="empty">0dp</dimen>
+
+    <!--Common Margin Defination-->
+    <dimen name="margin_x_small">5dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">10dp</dimen>
+    <dimen name="margin_normal">12dp</dimen>
+    <dimen name="margin_large">14dp</dimen>
+    <dimen name="margin_x_large">16dp</dimen>
+
+    <!--Common Padding Defination-->
+    <dimen name="padding_x_small">5dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_normal">12dp</dimen>
+    <dimen name="padding_large">14dp</dimen>
+    <dimen name="padding_x_large">16dp</dimen>
+</resources>
