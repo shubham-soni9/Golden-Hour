@@ -7,4 +7,21 @@
     <string name="reset">Reset</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="rationale_ask">This app may not work correctly without the requested permissions.</string>
+    <string name="rationale_ask_again">
+        This app may not work correctly without the requested permissions.
+        Open the app settings screen to modify app permissions.
+    </string>
+    <string name="title_settings_dialog">Permissions Required</string>
+    <string name="ok">Ok</string>
+    <string name="play_service_required">Google play services is required</string>
+    <string name="google_play_services_error">Google play services error</string>
+    <string name="getting_address">Getting Address</string>
+    <string name="not_connected_to_internet_text">No Internet Connection</string>
+    <string name="success">Success</string>
+    <string name="location_inserted">Location Inserted</string>
+    <string name="no_data_found">No data found</string>
+    <string name="cancel">Cancel</string>
+    <string name="internet_is_required">Internet Connection is Required</string>
 </resources>

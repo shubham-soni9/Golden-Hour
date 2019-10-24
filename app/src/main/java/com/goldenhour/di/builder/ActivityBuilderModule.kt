@@ -1,14 +1,17 @@
 package com.goldenhour.di.builder
 
+import com.goldenhour.di.module.HomeActivityModule
 import com.goldenhour.ui.home.HomeActivity
-import com.goldenhour.ui.home.HomeActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-@Module
+/**
+ * Providing support for injecting module with android components
+ */
+@Module(includes = [FragmentBuilderModule::class])
 internal abstract class ActivityBuilderModule {
 
     @ContributesAndroidInjector(modules = [HomeActivityModule::class])
-    abstract fun contributeMainActivity(): HomeActivity
+    abstract fun homeActivity(): HomeActivity
 
 }

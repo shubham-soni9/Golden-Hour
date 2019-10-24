@@ -1,307 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/home_appbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:elevation="@dimen/empty"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize" />
+        <variable
+            name="viewModel"
+            type="com.goldenhour.ui.home.HomeViewModel" />
+    </data>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/etSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_medium"
-            android:layout_marginLeft="@dimen/margin_medium"
-            android:layout_marginEnd="@dimen/margin_medium"
-            android:layout_marginRight="@dimen/margin_medium"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/search_box"
-            android:drawableEnd="@drawable/ic_search_black"
-            android:drawableRight="@drawable/ic_search_black"
-            android:focusable="false"
-            android:gravity="center_vertical"
-            android:hint="@string/search_location"
-            android:inputType="none"
-            android:maxLines="1"
-            android:padding="@dimen/padding_medium"
-            app:elevation="10dp" />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/empty"
-        map:layout_constraintBottom_toTopOf="@+id/cardView"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toBottomOf="@+id/home_appbar"
-        tools:context=".MapsActivity" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="@dimen/empty"
-        android:layout_height="wrap_content"
-        app:cardElevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/home_appbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:elevation="@dimen/empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageView2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_sunny" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageView3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="@dimen/margin_x_large"
-                android:tint="#87b4f8"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/ic_night" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivArrowUpDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
-                android:tint="#ff9800"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
-                app:srcCompat="@drawable/ic_arrow_up" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivArrowDownDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginLeft="76dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:tint="#fbcd96"
-                app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpDay"
-                app:layout_constraintEnd_toStartOf="@+id/txt_sunset"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tvSunrise"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowUpDay"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_arrow_down" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvSunrise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:text="@string/initial_timer"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpDay"
-                app:layout_constraintStart_toEndOf="@+id/ivArrowUpDay"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowUpDay" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_sunset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_x_large"
-                android:layout_marginRight="@dimen/margin_x_large"
-                android:text="@string/initial_timer"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                app:layout_constraintBottom_toBottomOf="@+id/ivArrowDownDay"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowDownDay" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivArrowUpNight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                app:layout_constraintEnd_toEndOf="@+id/ivArrowUpDay"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/ivArrowUpDay"
-                app:layout_constraintTop_toTopOf="@+id/imageView3"
-                app:srcCompat="@drawable/ic_arrow_up" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivArrowDownNight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/ivArrowDownDay"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/ivArrowDownDay"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowUpNight"
-                app:srcCompat="@drawable/ic_arrow_down" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivMoonrise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:text="@string/initial_timer"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpNight"
-                app:layout_constraintStart_toEndOf="@+id/ivArrowUpNight"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowUpNight" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_moonset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_large"
-                android:layout_marginRight="@dimen/margin_large"
-                android:text="@string/initial_timer"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                app:layout_constraintBottom_toBottomOf="@+id/ivArrowDownNight"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/ivArrowDownNight"
-                app:layout_constraintTop_toTopOf="@+id/ivArrowDownNight" />
-
-            <View
-                android:id="@+id/view"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:background="@color/dark_gray"
-                app:layout_constraintBottom_toTopOf="@+id/txt_date"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                android:layout_height="?actionBarSize">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/img_play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:background="@color/colorAccent"
-                android:drawableStart="@android:drawable/ic_media_play"
-                android:drawableLeft="@android:drawable/ic_media_play"
-                android:paddingStart="@dimen/margin_x_small"
-                android:paddingEnd="@dimen/margin_x_small"
-                android:text="@string/reset"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/img_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_large"
-                android:layout_marginLeft="@dimen/margin_large"
-                android:background="@color/colorAccent"
-                android:drawableStart="@android:drawable/ic_media_ff"
-                android:drawableLeft="@color/colorAccent"
-                android:paddingStart="@dimen/margin_x_small"
-                android:paddingEnd="@dimen/margin_x_small"
-                android:text="@string/next"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/img_play"
-                app:layout_constraintStart_toEndOf="@+id/img_play"
-                app:layout_constraintTop_toTopOf="@+id/img_play" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/headerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/ivSaveLocation"
+                        android:layout_toLeftOf="@+id/ivSaveLocation"
+                        android:text="@string/app_name"
+                        android:textAppearance="@style/CustomTextAppearance.Regular"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_extra_large" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/img_prev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_large"
-                android:layout_marginRight="@dimen/margin_large"
-                android:background="@color/colorAccent"
-                android:drawableStart="@android:drawable/ic_media_rew"
-                android:drawableLeft="@color/colorAccent"
-                android:paddingStart="@dimen/margin_x_small"
-                android:paddingEnd="@dimen/margin_x_small"
-                android:text="@string/previous"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/img_play"
-                app:layout_constraintEnd_toStartOf="@+id/img_play"
-                app:layout_constraintTop_toTopOf="@+id/img_play" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSaveLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/ivShowSavedLocation"
+                        android:layout_toLeftOf="@+id/ivShowSavedLocation"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:onClick="saveGoldenHour"
+                        android:padding="@dimen/padding_medium"
+                        app:srcCompat="@drawable/ic_pin" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivShowSavedLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:onClick="showBookmarkDialog"
+                        android:padding="@dimen/padding_medium"
+                        app:srcCompat="@drawable/ic_bookmark_black" />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_date"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvSearch"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                app:layout_constraintBottom_toTopOf="@+id/img_play"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
-                tools:text="Tue, Nov 13, 2018" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/search_box"
+                android:drawableEnd="@drawable/ic_search_black"
+                android:drawableRight="@drawable/ic_search_black"
+                android:focusable="false"
+                android:textAppearance="@style/CustomTextAppearance.Light"
+                android:gravity="center_vertical"
+                android:hint="@string/search_location"
+                android:inputType="none"
+                android:maxLines="1"
+                android:onClick="openPlaceSearch"
+                android:padding="@dimen/padding_medium"
+                app:elevation="10dp" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivPin"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="@dimen/margin_small"
-        android:layout_marginLeft="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginEnd="@dimen/margin_small"
-        android:layout_marginRight="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:tint="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/map"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/map"
-        app:srcCompat="@drawable/ic_pin" />
+        <fragment
+            android:id="@+id/google_map"
+            class="com.goldenhour.util.map.TouchableMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/empty"
+            map:layout_constraintBottom_toTopOf="@+id/cardView"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toBottomOf="@+id/home_appbar"
+            tools:context=".MapsActivity" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabCurrentLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_large"
-        android:layout_marginRight="@dimen/margin_large"
-        android:layout_marginBottom="@dimen/margin_large"
-        android:clickable="true"
-        android:focusable="true"
-        android:tint="@color/colorPrimary"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_gps_fixed_black" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/empty"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_sunny" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:tint="#87b4f8"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toStartOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                    app:srcCompat="@drawable/ic_night" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivArrowUpDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:tint="#ff9800"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2"
+                    app:srcCompat="@drawable/ic_arrow_up" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivArrowDownDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginLeft="76dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:tint="#fbcd96"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpDay"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSunset"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvSunrise"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowUpDay"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSunrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="@{viewModel.allDataModel.sunrise}"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpDay"
+                    app:layout_constraintStart_toEndOf="@+id/ivArrowUpDay"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowUpDay"
+                    tools:text="@string/initial_timer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSunset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_x_large"
+                    android:layout_marginRight="@dimen/margin_x_large"
+                    android:text="@{viewModel.allDataModel.sunset}"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivArrowDownDay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowDownDay"
+                    tools:text="@string/initial_timer" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivArrowUpNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    app:layout_constraintEnd_toEndOf="@+id/ivArrowUpDay"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/ivArrowUpDay"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3"
+                    app:srcCompat="@drawable/ic_arrow_up" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivArrowDownNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/ivArrowDownDay"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/ivArrowDownDay"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowUpNight"
+                    app:srcCompat="@drawable/ic_arrow_down" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMoonrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:text="@{viewModel.allDataModel.moonrise}"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivArrowUpNight"
+                    app:layout_constraintStart_toEndOf="@+id/ivArrowUpNight"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowUpNight"
+                    tools:text="@string/initial_timer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMoonset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:text="@{viewModel.allDataModel.moonset}"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivArrowDownNight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/ivArrowDownNight"
+                    app:layout_constraintTop_toTopOf="@+id/ivArrowDownNight"
+                    tools:text="@string/initial_timer" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@color/dark_gray"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_date"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/img_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@drawable/bg_curved_button"
+                    android:drawableStart="@android:drawable/ic_media_play"
+                    android:drawableLeft="@android:drawable/ic_media_play"
+                    android:onClick="@{() -> viewModel.resetDate()}"
+                    android:paddingStart="@dimen/margin_x_small"
+                    android:paddingEnd="@dimen/margin_x_small"
+                    android:text="@string/reset"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/img_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:background="@drawable/bg_curved_button"
+                    android:drawableStart="@android:drawable/ic_media_ff"
+                    android:drawableLeft="@color/colorAccent"
+                    android:onClick="@{() -> viewModel.incrementDate()}"
+                    android:paddingStart="@dimen/margin_x_small"
+                    android:paddingEnd="@dimen/margin_x_small"
+                    android:text="@string/next"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_play"
+                    app:layout_constraintStart_toEndOf="@+id/img_play"
+                    app:layout_constraintTop_toTopOf="@+id/img_play" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/img_prev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:background="@drawable/bg_curved_button"
+                    android:drawableStart="@android:drawable/ic_media_rew"
+                    android:drawableLeft="@android:drawable/ic_media_rew"
+                    android:onClick="@{() -> viewModel.decrementDate()}"
+                    android:paddingStart="@dimen/margin_x_small"
+                    android:paddingEnd="@dimen/margin_x_small"
+                    android:text="@string/previous"
+                    android:textAppearance="@style/CustomTextAppearance.Light"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_play"
+                    app:layout_constraintEnd_toStartOf="@+id/img_play"
+                    app:layout_constraintTop_toTopOf="@+id/img_play" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:text="@{viewModel.allDataModel.currentDate}"
+                    android:textAppearance="@style/CustomTextAppearance.Medium"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintBottom_toTopOf="@+id/img_play"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    tools:text="Tue, Nov 13, 2018" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPin"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:tint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="@+id/google_map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/google_map"
+            app:srcCompat="@drawable/ic_pin" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCurrentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_gps_fixed_black" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

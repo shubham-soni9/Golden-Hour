@@ -17,6 +17,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resValue 'string', 'google_maps_key', '"API_KEY"'
     }
     buildTypes {
         release {
@@ -27,6 +28,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -63,10 +67,11 @@ dependencies {
     implementation 'io.github.inflationx:viewpump:2.0.3'
 
     // Room SQLite for data persistence
-    implementation "androidx.room:room-runtime:$room_version"
+    // Old Library version is used to support room-coroutines as all version should be same and room-coroutines latest version is 2.1.0-alpha04
+    def room_version = "2.1.0-alpha04"
+    implementation "androidx.room:room-runtime:2.1.0-alpha06"
     kapt "androidx.room:room-compiler:$room_version"
-
-    // optional - RxJava support for Room
+    implementation "androidx.room:room-coroutines:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
 
     // Coroutines Libraries
@@ -76,6 +81,10 @@ dependencies {
     // Google Service Maps
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+
+    //Custom Toast
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
 
     // Unit Test Dependencies
     testImplementation 'junit:junit:4.12'

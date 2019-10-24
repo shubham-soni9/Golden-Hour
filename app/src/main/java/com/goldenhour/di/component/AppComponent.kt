@@ -9,6 +9,9 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
+/**
+ * Parent DI component for application level dependencies
+ */
 @Singleton
 @Component(modules = [ActivityBuilderModule::class, AndroidSupportInjectionModule::class, AppModule::class])
 interface AppComponent : AndroidInjector<BaseApplication> {

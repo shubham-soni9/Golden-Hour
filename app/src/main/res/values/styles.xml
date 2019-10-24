@@ -8,4 +8,44 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomDialogStyle">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_out</item>
+    </style>
+
+
+    <!--Custom text appearances-->
+    <style name="CustomTextAppearance.SemiBold" parent="android:TextAppearance"><!-- Custom Attr-->
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style> <!--Custom text appearances-->
+    <style name="CustomTextAppearance.Bold" parent="android:TextAppearance"><!-- Custom Attr-->
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style> <!--Custom text appearances-->
+
+
+    <style name="CustomTextAppearance.Light" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="CustomTextAppearance.Medium" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/font_medium</item>
+    </style>
+
+    <style name="CustomTextAppearance.Regular" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="CustomTextAppearance.UltraLight" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/font_ultralight</item>
+    </style>
+
+    <!-- your dialog style -->
+    <style name="DialogFragment" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
 </resources>
