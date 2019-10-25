@@ -17,7 +17,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        archivesBaseName = "golden_hour"
         // Restricted as android only key
         resValue 'string', 'google_maps_key', '"AIzaSyCgL2P-nJxJ8YrzGvO4CK29ra8SgbA6bQ4"'
 
