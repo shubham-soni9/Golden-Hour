@@ -11,4 +11,6 @@
     <color name="holo_blue_light">#ff33b5e5</color>
 
     <color name="black_50">#80000000</color>
+    <color name="arrow_up_day">#ff9800</color>
+    <color name="arrow_down_day">#fbcd96</color>
 </resources>

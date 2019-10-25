@@ -10,7 +10,6 @@
     <dimen name="margin_normal">12dp</dimen>
     <dimen name="margin_large">14dp</dimen>
     <dimen name="margin_x_large">16dp</dimen>
-
     <!--Common Padding Defination-->
     <dimen name="padding_x_small">5dp</dimen>
     <dimen name="padding_small">8dp</dimen>
@@ -28,4 +27,9 @@
     <dimen name="text_size_extra_large">20sp</dimen>
     <dimen name="text_size_extra_large_x">22sp</dimen>
     <dimen name="text_size_title_big">34sp</dimen>
+
+    <dimen name="elevation_small">4dp</dimen>
+
+    <dimen name="_32dp">32dp</dimen>
+
 </resources>

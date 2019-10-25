@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_marginLeft="@dimen/margin_x_large"
+    android:layout_marginRight="@dimen/margin_x_large"
     android:background="@drawable/cornered_layout"
     android:gravity="center"
     android:orientation="vertical">
@@ -13,9 +13,9 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_large"
         android:textAppearance="@style/CustomTextAppearance.Regular"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/text_size_medium"
@@ -26,14 +26,14 @@
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_margin="@dimen/margin_x_large"
         android:textAppearance="@style/CustomTextAppearance.Regular"
         android:textColor="@color/app_text_color"
         android:textSize="@dimen/text_size_normal" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="0.5dp"
         android:background="@android:color/darker_gray" />
 
     <Button
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/dialog_button_cornered_bottom"
-        android:padding="10dp"
+        android:padding="@dimen/padding_medium"
         android:text="@string/ok"
         android:textAllCaps="true"
         android:textAppearance="@style/CustomTextAppearance.Medium"

@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.goldenhour"
+        applicationId "com.goldhour"
         minSdkVersion 16
         targetSdkVersion 29
         multiDexEnabled true
@@ -17,7 +17,12 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resValue 'string', 'google_maps_key', '"API_KEY"'
+
+        // Restricted as android only key
+        resValue 'string', 'google_maps_key', '"AIzaSyCgL2P-nJxJ8YrzGvO4CK29ra8SgbA6bQ4"'
+
+        // This API key will be used for geocoding API which will required IP Restriction from the backend
+        resValue 'string', 'geocoding_api', '"AIzaSyABgf01WbCdgvUMLt2bSk-CxKL6RkIz6Ew"'
     }
     buildTypes {
         release {
@@ -58,13 +63,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
-
-    //Lottie Animation view
-    implementation "com.airbnb.android:lottie:$lottie_version"
-
-    //Calligraphy for custom fonts
-    implementation 'io.github.inflationx:calligraphy3:3.1.1'
-    implementation 'io.github.inflationx:viewpump:2.0.3'
 
     // Room SQLite for data persistence
     // Old Library version is used to support room-coroutines as all version should be same and room-coroutines latest version is 2.1.0-alpha04

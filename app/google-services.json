@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "294578323499",
-    "firebase_url": "https://golden-hour-e03e5.firebaseio.com",
-    "project_id": "golden-hour-e03e5",
-    "storage_bucket": "golden-hour-e03e5.appspot.com"
+    "project_number": "151608005396",
+    "firebase_url": "https://golden-hour-ed9a4.firebaseio.com",
+    "project_id": "golden-hour-ed9a4",
+    "storage_bucket": "golden-hour-ed9a4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:294578323499:android:4d3e0d081e73d34514ea6e",
+        "mobilesdk_app_id": "1:151608005396:android:7e03f6a0c3b8e43ee2e801",
         "android_client_info": {
-          "package_name": "com.goldenhour"
+          "package_name": "com.goldhour"
         }
       },
       "oauth_client": [
         {
-          "client_id": "294578323499-4dhpnt1621m1h8ld05dfltkjmbke9clu.apps.googleusercontent.com",
+          "client_id": "151608005396-bqe92krpep429fpfrm5qjl69b7b50per.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
+          "current_key": "AIzaSyAuIFk5bNDVzSaaAGCW4A8Dj23qdbpSviQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "294578323499-4dhpnt1621m1h8ld05dfltkjmbke9clu.apps.googleusercontent.com",
+              "client_id": "151608005396-bqe92krpep429fpfrm5qjl69b7b50per.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

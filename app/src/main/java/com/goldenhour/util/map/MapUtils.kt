@@ -27,7 +27,7 @@ object MapUtils {
                 + latLng.longitude
                 + "&sensor=true"
                 + "&key="
-                + context.getString(R.string.google_maps_key))
+                + context.getString(R.string.geocoding_api))
     }
 
     /**

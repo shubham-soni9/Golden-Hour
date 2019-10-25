@@ -16,5 +16,6 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/no_data_found"
-        android:textSize="20sp" />
+        android:textAppearance="@style/CustomTextAppearance.Bold"
+        android:textSize="@dimen/text_size_large" />
 </layout>
