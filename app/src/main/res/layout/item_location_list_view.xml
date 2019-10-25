@@ -22,7 +22,7 @@
         android:padding="@dimen/padding_large">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivSun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -33,14 +33,13 @@
             app:srcCompat="@drawable/ic_sunny" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/ivMoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_x_large"
-            android:tint="nig"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/ivSun"
+            app:layout_constraintStart_toStartOf="@+id/ivSun"
+            app:layout_constraintTop_toBottomOf="@+id/ivSun"
             app:srcCompat="@drawable/ic_night" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -50,9 +49,9 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:tint="@color/arrow_up_day"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSun"
+            app:layout_constraintStart_toEndOf="@+id/ivSun"
+            app:layout_constraintTop_toTopOf="@+id/ivSun"
             app:srcCompat="@drawable/ic_arrow_up" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -104,11 +103,11 @@
             android:id="@+id/ivArrowUpNight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMoon"
             app:layout_constraintEnd_toEndOf="@+id/ivArrowUpDay"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/ivArrowUpDay"
-            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/ivMoon"
             app:srcCompat="@drawable/ic_arrow_up" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -161,7 +160,7 @@
             android:layout_marginBottom="@dimen/margin_small"
             android:background="@color/dark_gray"
             app:layout_constraintBottom_toTopOf="@+id/txt_date"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/ivMoon" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_date"
